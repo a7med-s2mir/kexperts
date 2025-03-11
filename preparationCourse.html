@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kexperts</title>
+    <link rel="icon" href="./image/Knowledge Experts - Logo-02 (1).png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/jquery-ui.min.css">
+</head>
+<body dir="rtl">
+    <div class="navbar" >
+        <div class="nav">
+            <div class="logo">
+                <img src="./image/Knowledge Experts - Logo-02 (1).png" alt="" width="50px" height="70px">
+                <h1>شركة خبراء المعرفة</h1>
+            </div>
+            <div class="icon">
+                <a href="https://www.instagram.com/k_expertsco1/?igshid///=/%20/%20/%20ner7sx42ge1i" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/k_expertsco1?s///=/%20/%20/%2011" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    
+                 <a href="tel:966148404405+"><i class="fa-solid fa-mobile-screen-button"></i></a>   
+                    <a href="mailto:info@kexperts.sa"> <i class="fa-regular fa-envelope"></i></a>
+            </div>  
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h3>معهد إي سي لتعليم اللغة, برايتون, بريطانيا</h3>
+        <p>لغة انجليزية عام</p>
+        <hr>
+        <div class="course">
+            <div class="data">
+                <h3 class="total text-center">اجمالي التكاليف <span id="final-cost">0</span> ريال سعودي</h3>
+                <hr>
+                <label class="text-danger">الكورسات</label>
+             <div class="position-relative">
+                <input type="text" id="course-input" readonly onclick="openNav('course')" value="دورة تحضيرية ايلتس - صباحي">
+                <span class="dropdown-arrow">▼</span>
+             </div>
+                
+                <label class="text-danger">تاريخ بداية الكورس</label>
+                <input type="date" id="start-date">
+                
+                <label class="text-danger">عدد أسابيع الكورس</label>
+                <select id="weeks" onchange="calculateTotal()">
+                    <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+                </select>
+    
+                <label class="text-danger">خدمات السكن</label>
+                <div class="position-relative">
+                    <input type="text" id="accommodation-input" readonly onclick="openNav('accommodation')" value="لا أحتاج لخدمة سكن">
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+                
+                <label class="text-danger">استقبال المطار</label>
+                <select id="airport" onchange="calculateTotal()">
+                    <option value="0">لا أحتاج</option>
+                    <option value="200">نعم (200 ريال)</option>
+                </select>
+    
+                <label class="text-danger">التأمين الصحي</label>
+                <select id="insurance" onchange="calculateTotal()">
+                    <option value="0">لا أحتاج</option>
+                    <option value="100">نعم (100 ريال)</option>
+                </select>
+    
+                <h3 class="text-danger">تكاليف إضافية</h3>
+                <p>رسوم التسجيل: <span id="registration-fee">294 ريال سعودي</span></p>
+                <p>رسوم الكتب الدراسية: <span id="book-fee">34 ريال سعودي</span></p>
+    
+                <div class="buttons">
+                 <a href="./student-register.html"><button class="btn btn-danger">احصل على عرض مجاني</button></a>
+                 <a href="https://kexperts.sa/" target="_blank"><button class="btn btn-primary">التقديم عن طريق المكتب</button></a>
+                    <button class="btn btn-success" onclick="makeCall()">الحجز عبر الهاتف</button>
+                    <a href="./admin.html"><button class="btn btn-danger">الدخول الي صفحة الادمن</button></a>
+                </div>
+            </div>
+            <div id="nav-panel-course" class="nav-panel">
+                <div class="navExit">
+                    <h3 style="color:black">خيارات الكورسات المتوفرة</h3>
+                    <button class="close-btn" onclick="closeNav('course')"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <hr>
+                <div class="course-option selected border-primary border-2 p-3 rounded mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="text-end">لغة إنجليزية عام - صباحي</h5>
+                        <p class="text-danger"><del>1,789</del> <span class="fw-bold text-success">1,208</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar3 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">15</span></div>
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar4 fon"><i class="fa-solid fa-calendar-days text-danger"></i> يبدأ الكورس كل: <span class="rgb">الاثنين</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-users text-danger"></i> متوسط عدد الطلاب في الصف: <span class="rgb">13</span></div>
+                        
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar6 fon"><i class="fa-solid fa-book text-danger">
+                        </i> عدد الدروس في الأسبوع: <span class="rgb">20</span></div>
+                        <div class="p-2  fon"><i class="fa-solid fa-graduation-cap text-danger"></i> المستوى المطلوب: <span class="rgb">مبتدئ</span></div>
+                    </div>
+                    <a href="./index.html"><button class="btn btn-outline-danger w-100 mt-3">اختر هذا الكورس</button></a>
+
+                </div>
+                
+                <div class="course-option border border-2 p-3 rounded mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="text-end">لغة إنجليزية مكثف - صباحي</h5>
+                        <p class="text-danger"><del>2,255</del> <span class="fw-bold text-success">1,522</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar3 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">15</span></div>
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar4 fon"><i class="fa-solid fa-calendar-days text-danger"></i> يبدأ الكورس كل: <span class="rgb">الاثنين</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-users text-danger"></i> متوسط عدد الطلاب في الصف: <span class="rgb">13</span></div>
+                        
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar6 fon"><i class="fa-solid fa-book text-danger">
+                        </i> عدد الدروس في الأسبوع: <span class="rgb">20</span></div>
+                        <div class="p-2  fon"><i class="fa-solid fa-graduation-cap text-danger"></i> المستوى المطلوب: <span class="rgb">مبتدئ</span></div>
+                    </div>
+                    <a href="./IntensiveEnglish.html"><button class="btn btn-outline-danger w-100 mt-3">اختر هذا الكورس</button></a>
+                </div>
+
+                <div class="course-option border border-2 p-3 rounded mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="text-end">دورة تحضيرية ايلتس - صباحي</h5>
+                        <p class="text-danger"><del>1,802   </del> <span class="fw-bold text-success">1,217  </span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar3 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">15</span></div>
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar4 fon"><i class="fa-solid fa-calendar-days text-danger"></i> يبدأ الكورس كل: <span class="rgb">الاثنين</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-users text-danger"></i> متوسط عدد الطلاب في الصف: <span class="rgb">13</span></div>
+                        
+                    </div>
+                    <div class="d-flex flex-wrap text-end text-muted">
+                        <div class="p-2 mar6 fon"><i class="fa-solid fa-book text-danger">
+                        </i> عدد الدروس في الأسبوع: <span class="rgb">20</span></div>
+                        <div class="p-2  fon"><i class="fa-solid fa-graduation-cap text-danger"></i> المستوى المطلوب: <span class="rgb">مبتدئ</span></div>
+                    </div>
+                    <button class="btn btn-primary w-100 mt-3">خيارك الحالي</button>
+
+                </div>
+               
+                <hr>
+                <div id="nav-options-course"></div>
+            </div>
+        
+            <div id="nav-panel-accommodation" class="nav-panel">
+                <div class="navExit">
+                    <h3 style="color:black">خيارات السكن المتوفرة</h3>
+                    <button class="close-btn" onclick="closeNav('accommodation')"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <hr>
+                <div id="nav-options-accommodation">
+                    <div class="accommodation-option border border-2 p-3 rounded mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="text-end">سكن مع عائلة - غرفة فردية - الإفطار والعشاء</h5>
+                            <p class="text-danger"><span class="fw-bold">2400</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        </div>
+                        <div class="d-flex flex-wrap text-end text-muted">
+                            <div class="p-2"><i class="fa-solid fa-bath text-danger"></i> حمام ومطبخ مشتركان</div>
+                            <div class="p-2"><i class="fa-solid fa-map-marker-alt text-danger"></i> المسافة من المدرسة: 20 - 45 دقيقة</div>
+                        </div>
+                        <button class="btn btn-outline-danger w-100 mt-3">اختر هذا السكن</button>
+                    </div>
+                </div>
+                <div id="nav-options-accommodation">
+                    <div class="accommodation-option border border-2 p-3 rounded mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="text-end">سكن مع عائلة - غرفة فردية - الإفطار فقط</h5>
+                            <p class="text-danger"><span class="fw-bold">1283</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        </div>
+                        <div class="d-flex flex-wrap text-end text-muted">
+                            <div class="p-2"><i class="fa-solid fa-bath text-danger"></i> حمام ومطبخ مشتركان</div>
+                            <div class="p-2"><i class="fa-solid fa-map-marker-alt text-danger"></i> المسافة من المدرسة: 20 - 45 دقيقة</div>
+                        </div>
+                        <button class="btn btn-outline-danger w-100 mt-3">اختر هذا السكن</button>
+                    </div>
+                </div>
+                <div id="nav-options-accommodation">
+                    <button class="btn btn-secondary w-100 mt-3" onclick="noAccommodation()">لا أحتاج لخدمة سكن</button>
+                </div>
+            </div>
+            <div class="servece">
+                <div class="photo">
+                    <img src="./image/580.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h2>لغة انجليزية عام</h2>
+                    <p>كورس اللغة الأنجليزية العامة يمنحك الجرأة للتكلم باللغة الأنجليزية مع الاخرين من دون الشعور بالتوتر أو الأحراج . أن هذه الدوره ستجعلك تتكلم اللغة بأحتراف حتى بدون تعلم قواعد اللغة بشكل مفصل بحيث أنها ستغير مسار حياتك كلياً من خلال تحسين مهاراتك في التكلم والاستماع وستجعلك تتواصل بشكل أكثر فاعلية وثقة مطلقة في مواقف الحياة اليومية الخاصة بك .</p>
+                </div>
+                <div class="d-flex flex-wrap text-end text-muted">
+                    <div class="p-2 mar1 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
+                    <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">15</span></div>
+                </div>
+                <div class="d-flex flex-wrap text-end text-muted">
+                    <div class="p-2 mar5 fon"><i class="fa-solid fa-users text-danger"></i> متوسط عدد الطلاب في الصف: <span class="rgb">13</span></div>
+                    <div class="p-2 fon"><i class="fa-solid fa-calendar-days text-danger"></i> يبدأ الكورس كل: <span class="rgb">الاثنين</span></div>
+                </div>
+                <div class="d-flex flex-wrap text-end text-muted">
+                    <div class="p-2 mar2 fon"><i class="fa-solid fa-book text-danger">
+                    </i> عدد الدروس في الأسبوع: <span class="rgb">20</span></div>
+                    <div class="p-2  fon"><i class="fa-solid fa-graduation-cap text-danger"></i> المستوى المطلوب: <span class="rgb">مبتدئ</span></div>
+                </div>
+                <div class="EC">
+                    <div class="icon_1">
+                        <img src="./image/ecnewlogo.gif" alt="">
+                    </div>
+                    <div class="informat">
+                        <h2>معهد إي سي لتعليم اللغة</h2>
+                        <h4>EC Language Centres</h4>
+                        <p class="toggle">
+                            تتواجد مدرسة لتعليم اللغة الإنجليزية تابعة لمجموعة إي سي في مدينة برايتون الساحلية الرائعة، وتمتاز المدينة بطقسها المعتدل إلى حد كبير بالمقارنة مع العاصمة لندن، وتبعد المدينة مسافة ساعتين بالقطار عن العاصمة،                            <span id="dots">...</span>
+                            <span id="more" class="more-content">
+                                كما أنها تمتلك الكثير من المعالم السياحية من معارض ومتاحف ومسارح، بالإضافة إلى المهرجانات والعروض الموسيقية الرائعة، وتعمل المدرسة على إيصال الطالب لمرحلة الاحتراف من خلال العديد من البرامج التعليمية المختلفة، على يد كادر تعليمي مؤهل ومدرب، وتحاول المدرسة دائمًا توفير بيئة تعليم صحية ومتطورة باستخدام أحدث الوسائل العلمية المتاحة على مستوى العالم، ويوجد بالمدرسة مكتبة لاستعارة الكتب، ومنطقة لراحة الطلاب، ومنطقة للدراسة، بالإضافة إلى توفير خدمة الإنترنت المجاني، كما أن المدرسة تهتم بالجانب الترفيهي والاجتماعي والرحلات من أجل تعزيز ثقافة الطلاب، وحصلت المدرسة على الاعتماد من العديد من الهيئات المرموقة مثل المجلس الثقافي البريطاني وهيئة English UK.
+                            </span>
+                        </p>
+                    
+                        <button class="toggle-button" onclick="toggleText()">تفاصيل اضافية</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <footer >
+        <div class="footer">
+          <div class="row">
+            <div class="foot contact col-md-6 col-lg-3 ">
+              <h3 class="title">معلومات الاتصال</h3><!-- End .title -->
+              <div class="foot-body">
+                <ul>
+                  <li class="con">
+                    <span><i class="fa fa-map-marker"></i></span>
+                    <div class="text">7548  شارع حزام ابن عوف  2627  حي وادي مذينب  42364  المدينة المنورة  المملكة العربية السعودية https://goo.gl/j9K21F</div>
+                  </li>
+                  <li  class="con">
+                    <span><i class="fa fa-phone"></i></span>
+                    <div class="text">966148404405+</div>
+                  </li>
+                  <li class="con">
+                    <span><i class="fa fa-envelope"></i></span>
+                    <div class="text"><a href="mailto:info@kexperts.sa" class="__cf_email__" data-cfemail="aec7c0c8c1eec5cbd6decbdcdadd80ddcf">info@kexperts.sa
+                    </a></div>
+                  </li>
+                  
+                </ul>
+              </div><!-- End .foot-body -->
+            </div><!-- End .foot contact col-md-6 col-lg-3  -->
+            <div class="foot news col-md-6 col-lg-3 ">
+              <h3 class="title">أخر المقالات</h3><!-- End .title -->
+              <div class="foot-body">
+                <ul>
+                              <li>
+                    <span><img src="template/frontend/images/logo.png" alt=""></span>
+                    <div class="text">
+                      <div class="des">شركة خبراء المعرفة ترحب بكم في موقعها الرسمي</div>
+                      <a href="https://kexperts.sa/details.php?module=artical&id=28">معرفة المزيد</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span><img src="template/frontend/images/logo.png" alt=""></span>
+                    <div class="text">
+                      <div class="des">شركة خبراء المعرفة</div>
+                      <a href="https://kexperts.sa/details.php?module=artical&id=27">معرفة المزيد</a>
+                    </div>
+                  </li>
+                </ul>
+              </div><!-- End .foot-body -->
+            </div><!-- End .foot news col-md-6 col-lg-3  -->
+            <div class="foot news col-md-6 col-lg-3 ">
+              <h3 class="title">صفحات أخرى</h3><!-- End .title -->
+              <div class="foot-body" >
+              <ul>
+                <li class="fot"><a href="https://kexperts.sa/index.php">الرئيسية</a></li>
+                <li class="fot"><a href="https://kexperts.sa/details.php?module=topic&id=57">من نحن</i></a></li>
+                <li class="fot"><a href="https://kexperts.sa/details.php?module=topic&id=61">معلومات تهم عملائنا</a></li>
+                <li class="fot"><a href="https://kexperts.sa/cat.php?module=files">برامجنا</a> </li>
+                <li class="fot"><a href="https://kexperts.sa/cat.php?module=artical"> </i>المدونة</a></li>
+                <li class="fot"><a href="https://kexperts.sa/faq.php">الأسئلة الشائعة</a></li>
+                <li class="fot"><a href="https://kexperts.sa/contact.php">تواصل معنا</a></li>
+              <!--<li><a href="rss.php" target="_blank"> أرشيف المقالات </a> </li> -->
+               </ul>
+               </div><!-- End .foot-body -->
+            </div><!-- End .foot news col-md-6 col-lg-3  -->
+            <div class="foot news col-md-6 col-lg-3 ">
+              <h3 class="title">تابعنا على تويتر</h3><!-- End .title -->
+              <div class="foot-body" >
+                <ul>
+                  <li>
+                    <a class="twitter-timeline" data-height="100" data-width="250" data-link-color="#2B7BB9" href="https://twitter.com/k_expertsco1?s=21">Tweets by Knwoledge Experts</a>
+                    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="../platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  </li>
+                </ul>
+               </div><!-- End .foot-body -->
+            </div><!-- End .foot news col-md-6 col-lg-3  -->
+          </div><!-- End .row -->
+        </div><!-- End .container -->
+      </footer>
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 site">
+                  <p class="font"><img src="./image/mada.jpg"/></p>
+                  <p class="font">جميع الحقوق محفوظة © 2010 لـ شركة خبراء المعرفة</p>
+          </div><!-- End .col-md-6 -->
+          </div><!-- End .row -->
+        </div><!-- End .container -->
+      </div><!-- End .copyright -->
+
+   <script>
+    let selectedCourse = 0;
+let selectedAccommodation = 0;
+let currentSelectedCourse = null;
+
+
+document.querySelector('.btn-danger').addEventListener('click', function() {
+    // جمع البيانات من النموذج
+    let course = document.getElementById('course-input').value;
+    let startDate = document.getElementById('start-date').value; // تاريخ بداية الكورس
+    let weeks = document.getElementById('weeks').value;
+    let accommodation = document.getElementById('accommodation-input').value;
+    let airport = document.getElementById('airport').value;
+    let insurance = document.getElementById('insurance').value;
+
+    // حفظ البيانات في localStorage
+    localStorage.setItem('selectedCourse', course);
+    localStorage.setItem('selectedStartDate', startDate); // حفظ تاريخ بداية الكورس
+    localStorage.setItem('selectedWeeks', weeks);
+    localStorage.setItem('selectedAccommodation', accommodation);
+    localStorage.setItem('selectedAirport', airport);
+    localStorage.setItem('selectedInsurance', insurance);
+
+    // تحويل المستخدم لصفحة التسجيل
+    window.location.href = "student-register.html";
+});
+function openNav(type) {
+    let panelId = type === 'course' ? 'nav-panel-course' : 'nav-panel-accommodation';
+    document.getElementById(panelId).classList.add('active');
+    document.getElementById(panelId).style.overflowY = 'scroll';
+    document.getElementById(panelId).style.maxHeight = '800px';
+}
+
+function closeNav(type) {
+    let panelId = type === 'course' ? 'nav-panel-course' : 'nav-panel-accommodation';
+    document.getElementById(panelId).classList.remove('active');
+}
+
+function selectOption(type, element) {
+let name = element.querySelector('h5').innerText;
+let price = parseInt(element.querySelector('.fw-bold').innerText.replace(/,/g, ''));
+
+if (type === 'course') {
+    document.getElementById('course-input').value = name;
+    selectedCourse = price;
+    
+    if (currentSelectedCourse) {
+        currentSelectedCourse.classList.remove('border-primary', 'border-2');
+        currentSelectedCourse.querySelector('button').classList.replace('btn-primary', 'btn-outline-danger');
+        currentSelectedCourse.querySelector('button').innerText = 'اختر هذا الكورس';
+    }
+    
+    element.classList.add('border-primary', 'border-2');
+    element.querySelector('button').classList.replace('btn-outline-danger', 'btn-primary');
+    element.querySelector('button').innerText = 'خيارك الحالي';
+    currentSelectedCourse = element;
+} else {
+    document.getElementById('accommodation-input').value = name;
+    selectedAccommodation = price;
+}
+closeNav(type);
+calculateTotal();
+}
+
+document.querySelectorAll('.course-option').forEach(option => {
+    option.addEventListener('click', function () {
+        selectOption('course', this);
+    });
+});
+
+function calculateTotal() {
+    let weeks = parseInt(document.getElementById('weeks').value);
+    let airport = parseInt(document.getElementById('airport').value);
+    let insurance = parseInt(document.getElementById('insurance').value);
+    let registrationFee = 294;
+    let bookFee = 34;
+    
+    let totalCost = (selectedCourse * weeks) + selectedAccommodation + airport + insurance + registrationFee + bookFee;
+    
+    document.getElementById('final-cost').innerText = totalCost;
+}
+// إضافة خيارات الأسابيع باستخدام حلقة for
+const weeksSelect = document.getElementById('weeks');
+
+for (let i = 1; i <= 48; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = `${i} أسبوع`;
+    weeksSelect.appendChild(option);
+}
+document.querySelectorAll('.accommodation-option').forEach(option => {
+option.addEventListener('click', function () {
+selectOption('accommodation', this);
+calculateTotal(); // حساب السعر فور اختيار السكن
+});
+});
+
+function selectOption(type, element) {
+let name = element.querySelector('h5').innerText;
+let price = parseInt(element.querySelector('.fw-bold').innerText.replace(/,/g, ''));
+
+if (type === 'course') {
+document.getElementById('course-input').value = name;
+selectedCourse = price;
+
+if (currentSelectedCourse) {
+    currentSelectedCourse.classList.remove('border-primary', 'border-2');
+    currentSelectedCourse.querySelector('button').classList.replace('btn-primary', 'btn-outline-danger');
+    currentSelectedCourse.querySelector('button').innerText = 'اختر هذا الكورس';
+}
+
+element.classList.add('border-primary', 'border-2');
+element.querySelector('button').classList.replace('btn-outline-danger', 'btn-primary');
+element.querySelector('button').innerText = 'خيارك الحالي';
+currentSelectedCourse = element;
+} else {
+document.getElementById('accommodation-input').value = name;
+selectedAccommodation = price;
+}
+
+closeNav(type);
+calculateTotal(); // تحديث التكلفة بعد اختيار السكن
+}
+function noAccommodation() {
+document.getElementById('accommodation-input').value = 'لا أحتاج لخدمة سكن';
+selectedAccommodation = 0;
+closeNav('accommodation');
+calculateTotal();
+}
+
+function toggleText() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btn = document.querySelector(".toggle-button");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        moreText.style.display = "none";
+        btn.textContent = "تفاصيل اضافية";
+    } else {
+        dots.style.display = "none";
+        moreText.style.display = "inline";
+        btn.textContent = "تفاصيل اقل";
+    }
+}
+function makeCall() {
+    var phoneNumber = "0500552934";  // الرقم الذي سيتم الاتصال به
+    window.location.href = "tel:" + phoneNumber;
+}
+document.addEventListener("DOMContentLoaded", function() {
+// تحديد الكورس الافتراضي عند تحميل الصفحة
+const defaultCoursePrice = 1217; // السعر الافتراضي للكورس
+const registrationFee = 294; // رسوم التسجيل
+const bookFee = 34; // رسوم الكتب
+
+// تحديد السعر الإجمالي عند تحميل الصفحة
+updateTotalCost(defaultCoursePrice);
+
+// عند تغيير الكورس أو أي خيار آخر يتم حساب التكلفة
+document.getElementById('course-input').addEventListener('click', function() {
+openNav('course');  // فتح نافذة اختيار الكورس
+});
+
+document.getElementById('weeks').addEventListener('change', calculateTotal);
+document.getElementById('airport').addEventListener('change', calculateTotal);
+document.getElementById('insurance').addEventListener('change', calculateTotal);
+});
+
+function calculateTotal() {
+const coursePrice = getCoursePrice(); // استرجاع السعر بناءً على الكورس المحدد
+const weeks = parseInt(document.getElementById('weeks').value) || 1; // عدد الأسابيع
+const accommodationPrice = getAccommodationPrice(); // استرجاع السعر بناءً على السكن المحدد
+const airportPrice = parseInt(document.getElementById('airport').value) || 0; // سعر استقبال المطار
+const insurancePrice = parseInt(document.getElementById('insurance').value) || 0; // سعر التأمين الصحي
+
+const registrationFee = 294; // رسوم التسجيل
+const bookFee = 34; // رسوم الكتب
+
+// حساب التكلفة الإجمالية
+let totalCost = (coursePrice * weeks) + accommodationPrice + airportPrice + insurancePrice + registrationFee + bookFee;
+
+// تحديث التكلفة في الصفحة
+updateTotalCost(totalCost);
+}
+
+function getCoursePrice() {
+// استرجاع السعر بناءً على الكورس المحدد
+if (document.getElementById('course-input').value === "لغة إنجليزية عام - صباحي") {
+return 1208;
+}
+if (document.getElementById('course-input').value === "لغة إنجليزية مكثف - صباحي") {
+return 1522;
+}
+if (document.getElementById('course-input').value === "دورة تحضيرية ايلتس - صباحي") {
+return 1217;
+}
+return 0;
+}
+
+function getAccommodationPrice() {
+// استرجاع السعر بناءً على السكن المحدد
+if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار والعشاء") {
+return 2400;
+}
+if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار فقط") {
+return 1283;
+}
+return 0;
+}
+
+function updateTotalCost(totalCost) {
+// تحديث التكلفة الإجمالية في الصفحة
+document.getElementById('final-cost').textContent = totalCost;
+document.getElementById('registration-fee').textContent = "294 ريال سعودي";
+document.getElementById('book-fee').textContent = "34 ريال سعودي";
+}
+   </script>
+   
+</body>
+</html>

@@ -1,0 +1,355 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    font-family: "Amiri", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    background: #27ae60;
+}
+.navbar .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.icon i{
+    font-size: 35px;
+    color: white;
+    margin-left: 20px;
+}
+.logo{
+    display: flex;
+}
+.logo h1{
+    color: white;
+    margin-top: 6px;
+}
+.logo img{
+    margin-top: -8px;
+    margin-left: 10px;
+
+}
+
+.course-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.course-header img {
+    width: 100%;
+    border-radius: 10px;
+}
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ffc107;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.details-section {
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.settings-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.btn-primary {
+    background: #d32f2f;
+    border: none;
+    font-size: 18px;
+}
+.course{
+    display: flex;
+    
+}
+.course .data{
+    width: 25%;
+    margin-left: 4em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius:15px;
+    padding: 20px;
+}
+.servece{
+    width: 80%;
+}
+.servece .photo img{
+    width: 90%;
+    height: 400px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+}
+.nav-panel {
+    position: fixed;
+    top: 0;
+    right: -700px;
+    width: 700px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: right 0.3s ease;
+    padding: 20px;
+}
+.nav-panel.active {
+    right: 0;
+}
+.navExit{
+    display: flex;
+    justify-content: space-between;
+}
+.close-btn {
+    width: 50px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.course .data h3{
+    color: #27ae60;
+    margin-top: 20px;
+}
+.course .data p{
+    font-size: 15px;
+    font-weight: bold;
+}
+.course .data #registration-fee{
+    color: #27ae60;
+}
+.course .data #book-fee{
+    color: #27ae60;
+}
+/* تنسيق الأزرار */
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttons .btn {
+    width: 260px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+
+.buttons .btn-danger:hover {
+    background-color: #c82333;
+}
+
+.buttons .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+}
+
+.buttons .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.buttons .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+
+.buttons .btn-success:hover {
+    background-color: #218838;
+}
+.container {
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 50px;
+}
+.course-option {
+    background: #fff;
+}
+.selected {
+    background-color: #f0f8ff;
+    border: 2px solid blue !important;
+}
+del {
+    color: red;
+}
+.text-success {
+    font-weight: bold;
+}
+.position-relative {
+    position: relative;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 16px;
+    color: #888;
+}
+.text h2{
+    margin-top: 30px;
+}
+.text p{
+    text-align: justify;
+    width: 90%;
+    font-weight: bold;
+    color: rgba(24, 3, 3, 0.788);
+}
+.mar1{
+    margin-left: 20em;
+}
+.mar2{
+    margin-left: 18em;
+}
+.mar3{
+    margin-left: 5em;
+}
+.mar4{
+    margin-left: 4em;
+}
+.mar5{
+    margin-left: 16em;
+}
+.mar6{
+    margin-left: 2.6em;
+}
+.rgb{
+    color: #c82333;
+    font-size: 20px;
+    font-weight: bold; 
+    margin-left: 15px;
+
+}
+.fon{
+    font-size: 20px;
+}
+.EC{
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-between;
+}
+.EC .icon_1{
+    margin-left: 30px;
+}
+.EC .informat h4{
+    color: #007bff;  
+    margin-top: 10px;
+    font-weight: bold;  
+    font-size: 25px;
+}
+.more-content {
+    display: none;
+    margin-top: 10px;
+    
+}
+.toggle{
+    text-align: justify;
+    width: 90%;
+}
+.toggle-button {
+    width: 90%;
+    background-color: white;
+    color: grey;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid gray;
+}
+.toggle-button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+.footer{
+    background-color: #27ae60;
+    padding: 40px;
+    color: #373a3c;
+    font-size: 20px;
+    text-align: justify;
+
+}
+.foot-body ul .con{
+    display: flex;
+    margin-top: 30px;
+}
+.foot-body ul .con i{
+    margin-left: 20px;
+
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #373a3c;
+}
+.title{
+    margin-right: 36px;
+}
+.fot{
+    margin-top: 15px;
+}
+.copyright{
+    background-color: #218838;
+    padding:20px;
+}
+.site{
+    text-align: center;
+    margin-top: 40px;
+}
+.font{
+    font-size: 20px;
+}
+/* في ملف style.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.Liverpool, .Manchester {
+    display: none;
+}
