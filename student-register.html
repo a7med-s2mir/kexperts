@@ -163,7 +163,7 @@
         let bookFee = 500; // رسوم الكتب
 
         // حساب التكلفة الإجمالية
-        let totalCost = (coursePrice * weeks) + accommodationPrice + airportPrice + insurancePrice + registrationFee + bookFee;
+        let totalCost = (coursePrice * weeks) + (accommodationPrice * weeks) + airportPrice + insurancePrice + registrationFee + bookFee;
 
         let student = {
             name: $("#student-name").val(),

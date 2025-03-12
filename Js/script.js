@@ -68,20 +68,75 @@ document.querySelectorAll('.course-option').forEach(option => {
 });
 
 function calculateTotal() {
-    let weeks = parseInt(document.getElementById('weeks').value);
-    let airport = parseInt(document.getElementById('airport').value);
-    let insurance = parseInt(document.getElementById('insurance').value);
-    let registrationFee = 294;
-    let bookFee = 34;
+    // استرجاع سعر الكورس بناءً على الكورس المحدد
+    const coursePrice = getCoursePrice(); 
     
-    let totalCost = (selectedCourse * weeks) + selectedAccommodation + airport + insurance + registrationFee + bookFee;
+    // استرجاع عدد الأسابيع المحددة من القائمة المنسدلة
+    const weeks = parseInt(document.getElementById('weeks').value) || 1; 
     
-    document.getElementById('final-cost').innerText = totalCost;
+    // استرجاع سعر السكن بناءً على السكن المحدد
+    const accommodationPrice = getAccommodationPrice(); 
+    
+    // استرجاع سعر استقبال المطار
+    const airportPrice = parseInt(document.getElementById('airport').value) || 0; 
+    
+    // استرجاع سعر التأمين الصحي
+    const insurancePrice = parseInt(document.getElementById('insurance').value) || 0; 
+
+    // رسوم التسجيل
+    const registrationFee = 375; 
+    
+    // رسوم الكتب
+    const bookFee = 500; 
+
+    // حساب التكلفة الإجمالية
+    let totalCost = (coursePrice * weeks) + (accommodationPrice * weeks) + airportPrice + insurancePrice + registrationFee + bookFee;
+
+    // تحديث التكلفة الإجمالية في الصفحة
+    updateTotalCost(totalCost);
+}
+
+function getCoursePrice() {
+    // استرجاع السعر بناءً على الكورس المحدد
+    if (document.getElementById('course-input').value === "لغة إنجليزية عام - صباحي") {
+        return 2550;
+    }
+    if (document.getElementById('course-input').value === "لغة إنجليزية مكثف - صباحي") {
+        return 3100;
+    }
+    if (document.getElementById('course-input').value === "دورة تحضيرية ايلتس - صباحي") {
+        return 3500;
+    }
+    return 0;
+}
+
+function getAccommodationPrice() {
+    // استرجاع السعر بناءً على السكن المحدد
+    if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار والعشاء") {
+        return 1150;
+    }
+    if (document.getElementById('accommodation-input').value === "سكن مع عائلة - مشترك - الإفطار والعشاء") {
+        return 1000;
+    }
+    if (document.getElementById('accommodation-input').value === "سكن جامعي - فردية - الإفطار والعشاء") {
+        return 1150;
+    }
+    if (document.getElementById('accommodation-input').value === "سكن جامعي - مشترك - الإفطار والعشاء") {
+        return 850;
+    }
+    return 0;
+}
+
+function updateTotalCost(totalCost) {
+    // تحديث التكلفة الإجمالية في الصفحة
+    document.getElementById('final-cost').textContent = totalCost;
+    document.getElementById('registration-fee').textContent = "375 ريال سعودي";
+    document.getElementById('book-fee').textContent = "500 ريال سعودي";
 }
 // إضافة خيارات الأسابيع باستخدام حلقة for
 const weeksSelect = document.getElementById('weeks');
 
-for (let i = 1; i <= 48; i++) {
+for (let i = 2; i <= 48; i++) {
     const option = document.createElement('option');
     option.value = i;
     option.textContent = `${i} أسبوع`;
@@ -165,22 +220,7 @@ document.getElementById('airport').addEventListener('change', calculateTotal);
 document.getElementById('insurance').addEventListener('change', calculateTotal);
 });
 
-function calculateTotal() {
-const coursePrice = getCoursePrice(); // استرجاع السعر بناءً على الكورس المحدد
-const weeks = parseInt(document.getElementById('weeks').value) || 1; // عدد الأسابيع
-const accommodationPrice = getAccommodationPrice(); // استرجاع السعر بناءً على السكن المحدد
-const airportPrice = parseInt(document.getElementById('airport').value) || 0; // سعر استقبال المطار
-const insurancePrice = parseInt(document.getElementById('insurance').value) || 0; // سعر التأمين الصحي
 
-const registrationFee = 375; // رسوم التسجيل
-const bookFee = 500; // رسوم الكتب
-
-// حساب التكلفة الإجمالية
-let totalCost = (coursePrice * weeks) + accommodationPrice + airportPrice + insurancePrice + registrationFee + bookFee;
-
-// تحديث التكلفة في الصفحة
-updateTotalCost(totalCost);
-}
 
 function getCoursePrice() {
 // استرجاع السعر بناءً على الكورس المحدد
@@ -196,22 +236,7 @@ return 3500;
 return 0;
 }
 
-function getAccommodationPrice() {
-// استرجاع السعر بناءً على السكن المحدد
-if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار والعشاء") {
-return 1150;
-}
-if (document.getElementById('accommodation-input').value === "سكن مع عائلة - مشترك - الإفطار والعشاء") {
-return 1000;
-}
-if (document.getElementById('accommodation-input').value === "سكن جامعي - فردية - الإفطار والعشاء") {
-return 1150;
-}
-if (document.getElementById('accommodation-input').value === "سكن جامعي - مشترك - الإفطار والعشاء") {
-return 850;
-}
-return 0;
-}
+
 
 function updateTotalCost(totalCost) {
 // تحديث التكلفة الإجمالية في الصفحة
