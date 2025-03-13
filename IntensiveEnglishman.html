@@ -61,8 +61,8 @@
                 <label class="text-danger">استقبال المطار</label>
                 <select id="airport" onchange="calculateTotal()">
                     <option value="0">لا أحتاج</option>
-                    <option value="350">ذهاب فقط (750 ريال)</option>
-                    <option value="700">ذهاب وعودة (1500 ريال)</option>
+                    <option value="750">ذهاب فقط (750 ريال)</option>
+                    <option value="1500">ذهاب وعودة (1500 ريال)</option>
                 </select>
     
                 <label class="text-danger">التأمين الصحي</label>
@@ -76,7 +76,7 @@
                 <p>رسوم الكتب الدراسية: <span id="book-fee">500 ريال سعودي</span></p>
     
                 <div class="buttons">
-                 <a href="./student-register.html"><button class="btn btn-danger">احصل على عرض مجاني</button></a>
+                 <a href="./student-registerman.html"><button class="btn btn-danger">احصل على عرض مجاني</button></a>
                  <a href="https://kexperts.sa/" target="_blank"><button class="btn btn-primary">التقديم عن طريق المكتب</button></a>
                 <button class="btn btn-success" onclick="openWhatsApp()">الحجز عبر الهاتف</button>    
                 <a href="./admin.html"><button class="btn btn-danger">الدخول الي صفحة الادمن</button></a>
@@ -555,7 +555,7 @@ function makeCall() {
 }
 document.addEventListener("DOMContentLoaded", function() {
 // تحديد الكورس الافتراضي عند تحميل الصفحة
-const defaultCoursePrice = 7275 ; // السعر الافتراضي للكورس
+const defaultCoursePrice = 6175 ; // السعر الافتراضي للكورس
 const registrationFee = 294; // رسوم التسجيل
 const bookFee = 34; // رسوم الكتب
 
