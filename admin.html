@@ -200,6 +200,7 @@ tr:hover {
                     <p><strong>اسم الطالب:</strong> <span id="detail-name"></span></p>
                     <p><strong>رقم الهاتف:</strong> <span id="detail-phone"></span></p>
                     <p><strong>البريد الإلكتروني:</strong> <span id="detail-email"></span></p>
+                    <p><strong>المدينة:</strong> <span id="detail-city"></span></p>
                     <p><strong>الكورس:</strong> <span id="detail-course"></span></p>
                     <p><strong>تاريخ بداية الكورس:</strong> <span id="detail-startDate"></span></p>
                     <p><strong>عدد الأسابيع:</strong> <span id="detail-weeks"></span></p>
@@ -219,7 +220,7 @@ tr:hover {
     
     <script>
         
-      $(document).ready(function () {
+        $(document).ready(function () {
     function loadStudents() {
         let students = JSON.parse(localStorage.getItem("students")) || [];
         $("#students-list").empty();
@@ -232,7 +233,7 @@ tr:hover {
                     <tr data-index="${index}">
                         <td>${student.name || 'غير محدد'}</td>
                         <td>${student.startDate || 'غير محدد'}</td>
-                        <td>${student.totalCost || '0'} ريال سعودي</td> <!-- عرض إجمالي التكلفة -->
+                        <td>${student.totalCost || '0'} ريال سعودي</td>
                         <td>
                             <button class="btn btn-info btn-sm details-btn" data-index="${index}">عرض التفاصيل</button>
                             <button class="btn btn-danger btn-sm delete-btn" data-index="${index}">حذف</button>
@@ -262,7 +263,8 @@ tr:hover {
         $("#detail-accommodation").text(student.accommodation || 'لا أحتاج');
         $("#detail-airport").text(student.airport || 'لا أحتاج');
         $("#detail-insurance").text(student.insurance || 'لا أحتاج');
-        $("#detail-totalCost").text(student.totalCost || '0'); // عرض إجمالي التكلفة
+        $("#detail-totalCost").text(student.totalCost || '0');
+        $("#detail-city").text(student.city || 'غير محدد'); // عرض المدينة المختارة
 
         // عرض الـ modal
         $("#detailsModal").modal("show");

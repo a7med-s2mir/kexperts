@@ -40,7 +40,7 @@
                 <hr>
                 <label class="text-danger">الكورسات</label>
              <div class="position-relative">
-                <input type="text" id="course-input" readonly onclick="openNav('course')" value="دورة تحضيرية ايلتس - صباحي">
+                <input type="text" id="course-input" readonly onclick="openNav('course')" value="لغة إنجليزية عام - صباحي">
                 <span class="dropdown-arrow">▼</span>
              </div>
                 
@@ -61,7 +61,8 @@
                 <label class="text-danger">استقبال المطار</label>
                 <select id="airport" onchange="calculateTotal()">
                     <option value="0">لا أحتاج</option>
-                    <option value="200">نعم (200 ريال)</option>
+                    <option value="350">ذهاب فقط (750 ريال)</option>
+                    <option value="700">ذهاب وعودة (1500 ريال)</option>
                 </select>
     
                 <label class="text-danger">التأمين الصحي</label>
@@ -71,26 +72,26 @@
                 </select>
     
                 <h3 class="text-danger">تكاليف إضافية</h3>
-                <p>رسوم التسجيل: <span id="registration-fee">294 ريال سعودي</span></p>
-                <p>رسوم الكتب الدراسية: <span id="book-fee">34 ريال سعودي</span></p>
+                <p>رسوم التسجيل: <span id="registration-fee">375 ريال سعودي</span></p>
+                <p>رسوم الكتب الدراسية: <span id="book-fee">500 ريال سعودي</span></p>
     
                 <div class="buttons">
                  <a href="./student-register.html"><button class="btn btn-danger">احصل على عرض مجاني</button></a>
                  <a href="https://kexperts.sa/" target="_blank"><button class="btn btn-primary">التقديم عن طريق المكتب</button></a>
-                    <button class="btn btn-success" onclick="makeCall()">الحجز عبر الهاتف</button>
-                    <a href="./admin.html"><button class="btn btn-danger">الدخول الي صفحة الادمن</button></a>
+                <button class="btn btn-success" onclick="openWhatsApp()">الحجز عبر الهاتف</button>    
+                <a href="./admin.html"><button class="btn btn-danger">الدخول الي صفحة الادمن</button></a>
                 </div>
             </div>
             <div id="nav-panel-course" class="nav-panel">
                 <div class="navExit">
-                    <h3 style="color:black">خيارات الكورسات المتوفرة</h3>
+                    <h3 style="color:black">خيارات الكورسات المتوفرة في مانشستر</h3>
                     <button class="close-btn" onclick="closeNav('course')"><i class="fa-solid fa-xmark"></i></button>
                 </div>
                 <hr>
                 <div class="course-option selected border-primary border-2 p-3 rounded mb-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="text-end">لغة إنجليزية عام - صباحي</h5>
-                        <p class="text-danger"><del>1,789</del> <span class="fw-bold text-success">1,208</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        <p class="text-danger"><del>2900</del> <span class="fw-bold text-success">2650</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
                     </div>
                     <div class="d-flex flex-wrap text-end text-muted">
                         <div class="p-2 mar3 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
@@ -106,18 +107,17 @@
                         </i> عدد الدروس في الأسبوع: <span class="rgb">20</span></div>
                         <div class="p-2  fon"><i class="fa-solid fa-graduation-cap text-danger"></i> المستوى المطلوب: <span class="rgb">مبتدئ</span></div>
                     </div>
-                    <a href="./index.html"><button class="btn btn-outline-danger w-100 mt-3">اختر هذا الكورس</button></a>
-
+                    <a href="./GeneralEnglishman.html"><button class="btn btn-outline-danger w-100 mt-3">اختر هذا الكورس</button></a>
                 </div>
                 
                 <div class="course-option border border-2 p-3 rounded mb-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="text-end">لغة إنجليزية مكثف - صباحي</h5>
-                        <p class="text-danger"><del>2,255</del> <span class="fw-bold text-success">1,522</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        <p class="text-danger"><del>3500</del> <span class="fw-bold text-success">3200</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
                     </div>
                     <div class="d-flex flex-wrap text-end text-muted">
                         <div class="p-2 mar3 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
-                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">15</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">21</span></div>
                     </div>
                     <div class="d-flex flex-wrap text-end text-muted">
                         <div class="p-2 mar4 fon"><i class="fa-solid fa-calendar-days text-danger"></i> يبدأ الكورس كل: <span class="rgb">الاثنين</span></div>
@@ -129,17 +129,18 @@
                         </i> عدد الدروس في الأسبوع: <span class="rgb">20</span></div>
                         <div class="p-2  fon"><i class="fa-solid fa-graduation-cap text-danger"></i> المستوى المطلوب: <span class="rgb">مبتدئ</span></div>
                     </div>
-                    <a href="./IntensiveEnglish.html"><button class="btn btn-outline-danger w-100 mt-3">اختر هذا الكورس</button></a>
+                    <a href="./IntensiveEnglishman.html"><button class="btn btn-outline-danger w-100 mt-3">اختر هذا الكورس</button></a>
+
                 </div>
 
                 <div class="course-option border border-2 p-3 rounded mb-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="text-end">دورة تحضيرية ايلتس - صباحي</h5>
-                        <p class="text-danger"><del>1,802   </del> <span class="fw-bold text-success">1,217  </span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        <p class="text-danger"><del>3800   </del> <span class="fw-bold text-success">3500  </span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
                     </div>
                     <div class="d-flex flex-wrap text-end text-muted">
                         <div class="p-2 mar3 fon"><i class="fa-solid fa-user-group text-danger"></i> الحد الأدنى للعمر : <span class="rgb">16</span></div>
-                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">15</span></div>
+                        <div class="p-2 fon"><i class="fa-solid fa-clock text-danger"></i> عدد ساعات الأسبوع: <span class="rgb">25</span></div>
                     </div>
                     <div class="d-flex flex-wrap text-end text-muted">
                         <div class="p-2 mar4 fon"><i class="fa-solid fa-calendar-days text-danger"></i> يبدأ الكورس كل: <span class="rgb">الاثنين</span></div>
@@ -169,7 +170,7 @@
                     <div class="accommodation-option border border-2 p-3 rounded mb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="text-end">سكن مع عائلة - غرفة فردية - الإفطار والعشاء</h5>
-                            <p class="text-danger"><span class="fw-bold">2400</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                            <p class="text-danger"><span class="fw-bold">1150</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
                         </div>
                         <div class="d-flex flex-wrap text-end text-muted">
                             <div class="p-2"><i class="fa-solid fa-bath text-danger"></i> حمام ومطبخ مشتركان</div>
@@ -181,8 +182,34 @@
                 <div id="nav-options-accommodation">
                     <div class="accommodation-option border border-2 p-3 rounded mb-3">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="text-end">سكن مع عائلة - غرفة فردية - الإفطار فقط</h5>
-                            <p class="text-danger"><span class="fw-bold">1283</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                            <h5 class="text-end">سكن مع عائلة - مشترك - الإفطار والعشاء</h5>
+                            <p class="text-danger"><span class="fw-bold">1000</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        </div>
+                        <div class="d-flex flex-wrap text-end text-muted">
+                            <div class="p-2"><i class="fa-solid fa-bath text-danger"></i> حمام ومطبخ مشتركان</div>
+                            <div class="p-2"><i class="fa-solid fa-map-marker-alt text-danger"></i> المسافة من المدرسة: 20 - 45 دقيقة</div>
+                        </div>
+                        <button class="btn btn-outline-danger w-100 mt-3">اختر هذا السكن</button>
+                    </div>
+                </div>
+                <div id="nav-options-accommodation">
+                    <div class="accommodation-option border border-2 p-3 rounded mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="text-end">سكن جامعي - فردية - الإفطار والعشاء</h5>
+                            <p class="text-danger"><span class="fw-bold">1450</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
+                        </div>
+                        <div class="d-flex flex-wrap text-end text-muted">
+                            <div class="p-2"><i class="fa-solid fa-bath text-danger"></i> حمام ومطبخ مشتركان</div>
+                            <div class="p-2"><i class="fa-solid fa-map-marker-alt text-danger"></i> المسافة من المدرسة: 20 - 45 دقيقة</div>
+                        </div>
+                        <button class="btn btn-outline-danger w-100 mt-3">اختر هذا السكن</button>
+                    </div>
+                </div>
+                <div id="nav-options-accommodation">
+                    <div class="accommodation-option border border-2 p-3 rounded mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="text-end">سكن جامعي - مشترك - الإفطار والعشاء</h5>
+                            <p class="text-danger"><span class="fw-bold">1400</span> ريال سعودي <span class="text-muted">(1 أسبوع)</span></p>
                         </div>
                         <div class="d-flex flex-wrap text-end text-muted">
                             <div class="p-2"><i class="fa-solid fa-bath text-danger"></i> حمام ومطبخ مشتركان</div>
@@ -394,20 +421,75 @@ document.querySelectorAll('.course-option').forEach(option => {
 });
 
 function calculateTotal() {
-    let weeks = parseInt(document.getElementById('weeks').value);
-    let airport = parseInt(document.getElementById('airport').value);
-    let insurance = parseInt(document.getElementById('insurance').value);
-    let registrationFee = 294;
-    let bookFee = 34;
+    // استرجاع سعر الكورس بناءً على الكورس المحدد
+    const coursePrice = getCoursePrice(); 
     
-    let totalCost = (selectedCourse * weeks) + selectedAccommodation + airport + insurance + registrationFee + bookFee;
+    // استرجاع عدد الأسابيع المحددة من القائمة المنسدلة
+    const weeks = parseInt(document.getElementById('weeks').value) || 1; 
     
-    document.getElementById('final-cost').innerText = totalCost;
+    // استرجاع سعر السكن بناءً على السكن المحدد
+    const accommodationPrice = getAccommodationPrice(); 
+    
+    // استرجاع سعر استقبال المطار
+    const airportPrice = parseInt(document.getElementById('airport').value) || 0; 
+    
+    // استرجاع سعر التأمين الصحي
+    const insurancePrice = parseInt(document.getElementById('insurance').value) || 0; 
+
+    // رسوم التسجيل
+    const registrationFee = 375; 
+    
+    // رسوم الكتب
+    const bookFee = 500; 
+
+    // حساب التكلفة الإجمالية
+    let totalCost = (coursePrice * weeks) + (accommodationPrice * weeks) + airportPrice + insurancePrice + registrationFee + bookFee;
+
+    // تحديث التكلفة الإجمالية في الصفحة
+    updateTotalCost(totalCost);
+}
+
+function getCoursePrice() {
+    // استرجاع السعر بناءً على الكورس المحدد
+    if (document.getElementById('course-input').value === "لغة إنجليزية عام - صباحي") {
+        return 2650;
+    }
+    if (document.getElementById('course-input').value === "لغة إنجليزية مكثف - صباحي") {
+        return 3200;
+    }
+    if (document.getElementById('course-input').value === "دورة تحضيرية ايلتس - صباحي") {
+        return 3500;
+    }
+    return 0;
+}
+
+function getAccommodationPrice() {
+    // استرجاع السعر بناءً على السكن المحدد
+    if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار والعشاء") {
+        return 1150;
+    }
+    if (document.getElementById('accommodation-input').value === "سكن مع عائلة - مشترك - الإفطار والعشاء") {
+        return 1000;
+    }
+    if (document.getElementById('accommodation-input').value === "سكن جامعي - فردية - الإفطار والعشاء") {
+        return 1450;
+    }
+    if (document.getElementById('accommodation-input').value === "سكن جامعي - مشترك - الإفطار والعشاء") {
+        return 1400;
+    }
+    return 0;
+}
+
+function updateTotalCost(totalCost) {
+    // تحديث التكلفة الإجمالية في الصفحة
+    document.getElementById('final-cost').textContent = totalCost;
+    document.getElementById('registration-fee').textContent = "375 ريال سعودي";
+    document.getElementById('book-fee').textContent = "500 ريال سعودي";
 }
 // إضافة خيارات الأسابيع باستخدام حلقة for
 const weeksSelect = document.getElementById('weeks');
 
-for (let i = 1; i <= 48; i++) {
+for (let i = 2; i <= 48; i++) {
     const option = document.createElement('option');
     option.value = i;
     option.textContent = `${i} أسبوع`;
@@ -474,7 +556,7 @@ function makeCall() {
 }
 document.addEventListener("DOMContentLoaded", function() {
 // تحديد الكورس الافتراضي عند تحميل الصفحة
-const defaultCoursePrice = 1217; // السعر الافتراضي للكورس
+const defaultCoursePrice = 7875 ; // السعر الافتراضي للكورس
 const registrationFee = 294; // رسوم التسجيل
 const bookFee = 34; // رسوم الكتب
 
@@ -491,55 +573,37 @@ document.getElementById('airport').addEventListener('change', calculateTotal);
 document.getElementById('insurance').addEventListener('change', calculateTotal);
 });
 
-function calculateTotal() {
-const coursePrice = getCoursePrice(); // استرجاع السعر بناءً على الكورس المحدد
-const weeks = parseInt(document.getElementById('weeks').value) || 1; // عدد الأسابيع
-const accommodationPrice = getAccommodationPrice(); // استرجاع السعر بناءً على السكن المحدد
-const airportPrice = parseInt(document.getElementById('airport').value) || 0; // سعر استقبال المطار
-const insurancePrice = parseInt(document.getElementById('insurance').value) || 0; // سعر التأمين الصحي
 
-const registrationFee = 294; // رسوم التسجيل
-const bookFee = 34; // رسوم الكتب
-
-// حساب التكلفة الإجمالية
-let totalCost = (coursePrice * weeks) + accommodationPrice + airportPrice + insurancePrice + registrationFee + bookFee;
-
-// تحديث التكلفة في الصفحة
-updateTotalCost(totalCost);
-}
 
 function getCoursePrice() {
 // استرجاع السعر بناءً على الكورس المحدد
 if (document.getElementById('course-input').value === "لغة إنجليزية عام - صباحي") {
-return 1208;
+return 2650;
 }
 if (document.getElementById('course-input').value === "لغة إنجليزية مكثف - صباحي") {
-return 1522;
+return 3200;
 }
 if (document.getElementById('course-input').value === "دورة تحضيرية ايلتس - صباحي") {
-return 1217;
+return 3500;
 }
 return 0;
 }
 
-function getAccommodationPrice() {
-// استرجاع السعر بناءً على السكن المحدد
-if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار والعشاء") {
-return 2400;
-}
-if (document.getElementById('accommodation-input').value === "سكن مع عائلة - غرفة فردية - الإفطار فقط") {
-return 1283;
-}
-return 0;
-}
+
 
 function updateTotalCost(totalCost) {
 // تحديث التكلفة الإجمالية في الصفحة
 document.getElementById('final-cost').textContent = totalCost;
-document.getElementById('registration-fee').textContent = "294 ريال سعودي";
-document.getElementById('book-fee').textContent = "34 ريال سعودي";
+document.getElementById('registration-fee').textContent = "375 ريال سعودي";
+document.getElementById('book-fee').textContent = "500 ريال سعودي";
+}
+
+function openWhatsApp() {
+    let phoneNumber = "966500552934"; // رقم الهاتف بدون علامة "+"
+    let message = "مرحبًا، أريد الحجز عبر الهاتف."; // الرسالة الافتراضية
+    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank'); // فتح الرابط في نافذة جديدة
 }
    </script>
-   
 </body>
 </html>
